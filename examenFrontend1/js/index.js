@@ -2,6 +2,7 @@ const contenido = document.querySelector('#contenido');
 const ordenes = document.querySelector('#ordenes');
 const ordenNumero = document.querySelector('#ordenNumero');
 const ordenTitulo = document.querySelector('#ordenTitulo');
+const ordenCompra = document.querySelector('#ordenCompra');
 
 const URL = 'https://eshop-deve.herokuapp.com/api/v2/orders';
 
@@ -47,6 +48,9 @@ function numeroOrden(valor) {
         <div>Orden Numero:</div>
         <input type="hidden" id="ordenTitulo" value="${valor}"> ${valor} </input>
     `
+
+    document.getElementById('ordenCompra').value = valor;
+    
     extrae();
 }
 
