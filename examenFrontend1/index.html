@@ -10,105 +10,137 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Tabla de Pago</a>
-            </li>
-        </ul>
-        <h1>Tabla de pago</h1>
+        <div class="portada">
+            <img class="portada-img" src="images/tendencys.png" alt="">
+        </div>
+        <div class="portada">
+            <h1 class="titulo">Tabla de pago</h1>
+        </div>
     </header>
     <main>
-        <section>
-            <article id="ordenNumero">
-            </article>
-            <article class='orders'>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="ordenes">
-                    </ul>
-                </div>
-            </article>
-            <article>
+        <section class='orders col-md-11'>
+            <section class="col-md-4">
+                <article>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Seleccionar orden de compra:
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="ordenes">
+                        </ul>
+                    </div>
+                </article>
+                <article id="ordenNumero">
+                    <div>Orden Numero:</div>
+                </article>
+                <article>
+                    <img src="images/table.svg" id="imgTable" alt="">
+                </article>
+            </section>
+            <article class="formulario col-md-8">
                 <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Añadir producto
                     </button>
                 </p>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <form class="row g-3 needs-validation" id="formNewProduct" novalidate>
-                            <div class="col-md-4">
-                                <label class="form-label">Orden de Compra:</label>
-                                <input type="text" name="ordenC" class="form-control" id="ordenCompra" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-label">Sku:</label>
-                                <select class="form-select" name="sku" id="skuOption" onchange="searchName()" price=""
-                                    required>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Nombre:</label>
-                                <input type="text" name="nameP" class="form-control" id="nameItem" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label" >Cant:</label>
-                                <input type="number" name="cant" id="cantItem" class="form-control" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label" >Precio:</label>
-                                <input type="text" name="price" class="form-control" id="priceItem" value="" required>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary">Enviar</button>
-                            </div>
-                        </form>
+                <div>
+                    <div class="collapse col-md-12" id="collapseExample">
+                        <div class="card card-body col-md-12">
+                            <form class="form row g-3 needs-validation" id="formNewProduct">
+                                <div class="col-md-4">
+                                    <label for="ordenCompra" class="form-label">Orden de Compra:</label>
+                                    <input type="number" name="ordenC" class="form-control" id="ordenCompra" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Sku:</label>
+                                    <select class="form-select form-control" name="sku" id="skuOption"
+                                        onchange="searchName()" price="" required>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="nameItem" class="form-label">Nombre:</label>
+                                    <input type="text" name="nameP" class="form-control" id="nameItem" required>
+                                </div>
+
+                                <div class="col-md-4"></div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Cant:</label>
+                                    <input type="number" name="cant" id="cantItem" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label">Precio:</label>
+                                    <div class="precioIcon">
+                                        <span class="input-group-text" id="inputGroupPrepend">$</span>
+                                        <input type="number" name="price" class="form-control" id="priceItem" value=""
+                                            required>
+                                        <span class="input-group-text" id="inputGroupPrepend">MXN</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="cajaBtn col-11">
+                                    <button class="boton btn btn-primary" type="submit">Añadir al listado</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </article>
-            <article>
-                <p id="ordenC"></p>
-                <p id="sku"></p>
-                <p id="name"></p>
-                <p id="cant"></p>
-                <p id="price"></p>
-            </article>
         </section>
+        <article class='col-md-10 offset-md-1'>
+            <table id="articleTable" class=" tabla table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Sku</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id='contenido'>
 
-        <!-- <button type="button" class="btn btn-primary" onclick="extrae()">Obtener</button> -->
-        <section>
-            <article class='table'>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Sku</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody id='contenido'>
-
-                    </tbody>
-                </table>
-            </article>
+                </tbody>
+                <tfoot>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    <th id="total"></th>
+                </tfoot>
+            </table>
+            <div id="pagar" onclick="pagar()" class="col-md-4 offset-md-6">
+                <button class="btn btn-primary">Pagar</button>
+            </div>
+        </article>
         </section>
     </main>
     <footer></footer>
+    <div id="alerta">
+        <div class="contain">
+        <div id="alertaText">
+            <div>¡Gracias por tu compra!</div>
+            <div>Tu pago se a realizado exitosamente</div>
+            <div onclick="salir()"><img src="images/check-circle-fill.svg" id="imgSalir" alt=""></div>
+        </div>
+    </div>
+    </div>
     <script src="js/index.js"></script>
     <script src="js/products.js"></script>
-    <script src="js/send.js"></script>
 </body>
 
 </html>

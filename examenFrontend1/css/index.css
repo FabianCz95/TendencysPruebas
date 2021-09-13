@@ -1,0 +1,126 @@
+:root {
+    --fondo: #EEEEEE;
+    --bordes: #3EDBF0;
+    --variante: #C0FEFC;
+    --encabezados: #77ACF1;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.portada {
+    text-align: center;
+    border-bottom: .2rem solid var(--bordes);
+    padding: 1rem 0 1rem 0;
+}
+
+.portada-img {
+    width: 60%;
+    height: 60%;
+}
+
+.titulo {
+    font-family: 'Glory', sans-serif;
+    font-weight: bold;
+}
+
+.orders{
+    padding: 1rem;
+    margin: 0 0 0 2rem;
+    text-align: center;
+    display: flex;
+    min-height: 8rem;
+}
+
+#ordenNumero {
+    font-weight: bold;
+}
+
+#imgTable {
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.formulario {
+    text-align: right;
+}
+
+.card {
+    text-align: left;
+    background-color: var(--fondo);
+    border: solid .1rem var(--bordes);
+}
+
+.precioIcon, #priceItem {
+    display: inline-flex;
+}
+
+.boton {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--encabezados);
+    border: solid .01 var(--bordes);
+}
+
+#articleTable {
+    margin: 0 auto;
+    
+}
+
+.tabla {
+    border: solid .05rem var(--bordes);
+    border-radius: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+#pagar {
+    text-align: right;
+    margin-top: 1rem;
+    height: 4rem;
+}
+
+#pagar > .btn {
+    width: 100%;
+    font-weight: bold;
+}
+
+#alerta {
+    z-index: 10;
+    
+    background-color: #77acf1e1;
+    display: none;
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    min-width: 100%;
+    min-height: 1000%;
+}
+
+.contain {
+    position: relative;
+}
+
+#alertaText {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+#imgSalir {
+    padding: 1rem;
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+}
